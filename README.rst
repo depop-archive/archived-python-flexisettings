@@ -34,7 +34,7 @@ lib we are making use of.
 ``initial_namespace`` is the default namespace for config values of your shared
 lib. Projects who want to use your lib will be able to customise the namespace,
 but as they are used for bootstrapping there are two config values which will
-*always* use the defaut name (``APP_CONFIG`` and ``CONFIG_NAMESPACE``).
+*always* use the default name (``APP_CONFIG`` and ``CONFIG_NAMESPACE``).
 
 So for example, say ``myapp`` wants to use ``test_lib``. ``myapp`` can
 customise the namespace by defining ``TEST_LIB_CONFIG_NAMESPACE = 'CUSTOM'``.
@@ -60,7 +60,7 @@ Then ``myapp`` would be able to ``export TEST_LIB_CONFIG_NAMESPACE=CUSTOM``.
 That explains namespace customisation a bit, what about the ``APP_CONFIG``?
 
 Say for example that ``myapp`` is a Django website and ``test_lib`` has the
-defaults file shown above. Ijn your ``myapp`` project you could:
+defaults file shown above. In your ``myapp`` project you could:
 
 .. code:: bash
 
