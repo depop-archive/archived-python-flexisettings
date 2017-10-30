@@ -3,7 +3,7 @@ flexisettings
 
 |Build Status|
 
-.. |Build Status| image:: https://circleci.com/gh/depop/python-flexisettings.svg?style=shield&circle-token=a9ea2909c5cbc4cb32a87f50444ca79b99e3b09c
+.. |Build Status| image:: https://circleci.com/gh/depop/python-flexisettings.svg?style=shield&circle-token=ae7b355ec3b18c69d3370898a69932091c43d152
     :alt: Build Status
 
 Partly inspired by Django's ``from django.conf import settings`` settings object.
