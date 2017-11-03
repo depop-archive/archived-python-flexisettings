@@ -26,12 +26,13 @@ setup(
 
     license='Apache 2.0',
     classifiers=[
-        'Environment :: Web Environment',
+        'Environment :: Plugins',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: Apache Software License',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
-        'Framework :: Celery',
+        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 2.7',
     ],
     install_requires=[
         'configloader[attrdict,yaml]>=1.0.1,<1.1',
