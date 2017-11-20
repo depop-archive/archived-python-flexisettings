@@ -11,3 +11,5 @@ APP_CONFIG = os.getenv('TEST_LIB_APP_CONFIG', None)
 VAR1 = 'turkey'
 
 VAR2 = 'sausage'
+
+VAR3 = None
