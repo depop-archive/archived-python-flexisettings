@@ -28,7 +28,7 @@ For example, create a ``test_lib/conf/__init__.py`` like:
 	settings = Settings(initial_namespace='TEST_LIB', defaults='test_lib.conf.defaults')
 
 We have a concept of customisable 'namespace' (prefix) for config values. This
-is as defined by the `ConfigLoader <https://pypi.python.org/pypi/configloader>`__
+is as defined by the `ConfigLoader <https://pypi.python.org/pypi/configloader>`_
 lib we are making use of.
 
 ``initial_namespace`` is the default namespace for config values of your shared
@@ -128,7 +128,7 @@ Now decide which Python version you want to test and create a virtualenv:
 
 .. code:: bash
 
-    pyenv virtualenv 3.6.2 flexisettings
+    pyenv virtualenv 3.6.4 flexisettings
     pip install -r requirements-test.txt
 
 The code in ``test_project`` demonstrates collaborative config between a shared
@@ -137,10 +137,4 @@ the test project
 
 .. code:: bash
 
-    export PYTHONPATH=.:test_project:$PYTHONPATH
-
-Now we can run the tests:
-
-.. code:: bash
-
-    py.test -v -s --pdb test_project/tests/
+    make test

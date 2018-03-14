@@ -14,10 +14,10 @@ Usage:
 
 There are two important env vars:
 
-    `FLEXISETTINGS_CONFIG_NAMESPACE`
+    `<inital_namespace>_CONFIG_NAMESPACE`
         Sets the prefix used for loading further config values from env
-        and config file. Defaults to `EVENT_CONSUMER`.
-    `EVENT_CONSUMER_APP_CONFIG`
+        and config file. Set when instantiating the `Settings` object.
+    `<inital_namespace>_APP_CONFIG`
         Import path to a python object to load futher config values from.
         Defaults to None. e.g. 'django.conf.settings' or 'celeryconfig'.
 
@@ -31,8 +31,8 @@ provided in `settings` without the prefix.
 
 e.g. if you set your env to:
 
-    EVENT_CONSUMER_CONFIG_NAMESPACE=MYAPP_EVENTS
-    EVENT_CONSUMER_APP_CONFIG=django.conf.settings
+    MYAPP_CONFIG_NAMESPACE=MYAPP_EVENTS
+    MYAPP_APP_CONFIG=django.conf.settings
 
 and in your Django settings you have:
 
