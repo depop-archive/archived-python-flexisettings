@@ -19,6 +19,10 @@ the project which imports them (like how Django libraries can expect the Django
 Usage
 -----
 
+.. code:: bash
+
+    pip install flexisettings
+
 We want the shared lib to be able to load config values *from the app which is*
 *importing it*.
 
