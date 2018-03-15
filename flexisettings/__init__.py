@@ -61,12 +61,16 @@ class Settings(ObjectProxy):
         config = _load_config(initial_namespace, defaults)
         super(Settings, self).__init__(config)
 
+    def __dir__(self):
+        base = super(Settings, self).__dir__()
+        return base + list(self.keys())
+
     def _reload(self):
         # type: () -> None
 
         if self._self_defaults:
             # we have to reload the `defaults` module otherwise
-            # changed values won't show up
+            # changed values (e.g. loaded from env var) won't show up
             try:
                 module = import_module(self._self_defaults)
             except import_error_cls:
@@ -95,8 +99,8 @@ def _load_config(initial_namespace=None, defaults=None):
         config = ConfigLoader()
         config.update_from_object(defaults)
 
-    namespace = config.CONFIG_NAMESPACE
-    app_config = config.APP_CONFIG
+    namespace = getattr(config, 'CONFIG_NAMESPACE', initial_namespace)
+    app_config = getattr(config, 'APP_CONFIG', None)
 
     # load customised config
     if app_config:
