@@ -1,7 +1,11 @@
 flexisettings
 =============
 
-|Build Status|
+|PyPI Version| |Build Status|
+
+.. |PyPI Version| image:: http://img.shields.io/pypi/v/flexisettings.svg?style=flat
+   :target: https://pypi.python.org/pypi/flexisettings/
+   :alt: Latest PyPI version
 
 .. |Build Status| image:: https://circleci.com/gh/depop/python-flexisettings.svg?style=shield&circle-token=ae7b355ec3b18c69d3370898a69932091c43d152
     :alt: Build Status
