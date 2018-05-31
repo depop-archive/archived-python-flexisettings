@@ -13,3 +13,5 @@ VAR1 = 'turkey'
 VAR2 = 'sausage'
 
 VAR3 = None
+
+VAR_FROM_ENV = os.getenv('VAR_FROM_ENV', 'broccoli')
