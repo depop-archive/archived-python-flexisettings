@@ -1,7 +1,6 @@
-from flexisettings.utils import override_settings
+from flexisettings.utils import override_settings, override_environment
 
 from test_lib.conf import settings
-from .utils import override_environment
 
 
 def setup_function(function):
@@ -38,8 +37,7 @@ def test_from_default_namespace():
     If we set the APP_CONFIG env var, can we load (namespaced) values from the
     app config file into our test_lib settings?
     """
-    with override_environment(TEST_LIB_APP_CONFIG='app.settings'):
-        settings._reload()
+    with override_environment(settings, TEST_LIB_APP_CONFIG='app.settings'):
         assert settings.WHATEVER == 'WTF'  # app.settings.TEST_LIB_WHATEVER
         assert settings.VAR1 == 'chicken'  # app.settings.TEST_LIB_VAR1
         assert settings.VAR2 == 'sausage'  # test_lib.conf.defaults.VAR2
@@ -51,10 +49,10 @@ def test_from_custom_namespace():
     app config file (using non-default namespace) into our test_lib settings?
     """
     with override_environment(
+        settings,
         TEST_LIB_APP_CONFIG='app.settings',
         TEST_LIB_CONFIG_NAMESPACE='CUSTOM',
     ):
-        settings._reload()
         assert not hasattr(settings, 'WHATEVER')
         assert settings.VAR1 == 'ostrich'  # app.settings.CUSTOM_VAR1
         assert settings.VAR2 == 'sausage'  # test_lib.conf.defaults.VAR2
@@ -67,9 +65,9 @@ def test_flexisettings_app_from_default_namespace():
     app config file into our test_lib settings?
     """
     with override_environment(
+        settings,
         TEST_LIB_APP_CONFIG='app2.conf.settings',
     ):
-        settings._reload()
         assert settings.WHATEVER == 'WTF'  # app.settings.TEST_LIB_WHATEVER
         assert settings.VAR1 == 'chicken'  # app.settings.TEST_LIB_VAR1
         assert settings.VAR2 == 'sausage'  # test_lib.conf.defaults.VAR2
@@ -82,10 +80,10 @@ def test_flexisettings_app_from_custom_namespace():
     app config file (using non-default namespace) into our test_lib settings?
     """
     with override_environment(
+        settings,
         TEST_LIB_APP_CONFIG='app2.conf.settings',
         TEST_LIB_CONFIG_NAMESPACE='CUSTOM',
     ):
-        settings._reload()
         assert not hasattr(settings, 'WHATEVER')
         assert settings.VAR1 == 'ostrich'  # app.settings.CUSTOM_VAR1
         assert settings.VAR2 == 'sausage'  # test_lib.conf.defaults.VAR2
