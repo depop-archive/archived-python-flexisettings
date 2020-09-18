@@ -38,12 +38,14 @@ setup(
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 2.7',
     ],
     install_requires=[
         'configloader[attrdict,yaml]>=1.0.1,<1.1',
         'wrapt>=1.10,<2.0',
-        'typing>=3.6.2,<4.0',
+        'typing>=3.6.2,<4.0; python_version < "3.6"',
         'six',
     ],
 
