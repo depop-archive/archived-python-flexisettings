@@ -102,6 +102,8 @@ This project is tested against:
 =========== ===
 Python 2.7   * 
 Python 3.6   * 
+Python 3.7   * 
+Python 3.8   * 
 =========== ===
 
 Running the tests
@@ -124,7 +126,7 @@ the two Python version jobs separately:
 
 .. code:: bash
 
-    circleci build --job python-3.6
+    circleci build --job python-3.8
 
 py.test (single python version)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -136,7 +138,7 @@ Now decide which Python version you want to test and create a virtualenv:
 
 .. code:: bash
 
-    pyenv virtualenv 3.6.4 flexisettings
+    pyenv virtualenv 3.8.5 flexisettings
     pip install -r requirements-test.txt
 
 The code in ``test_project`` demonstrates collaborative config between a shared
